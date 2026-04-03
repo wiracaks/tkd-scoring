@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TKD Championship Scoreboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="header">
+    <h1>TAEKWONDO CHAMPIONSHIP</h1>
+  </div>
+
+  <div class="main-board">
+
+    <div class="fighter blue">
+      <h2>BLUE</h2>
+      <div class="score" id="blueScore">0</div>
+      <div class="gamjeom">Gamjeom: <span id="blueGamjeom">0</span></div>
+    </div>
+
+    <div class="center">
+      <div class="timer" id="time">02:00</div>
+      <div id="winner" class="winner"></div>
+
+      <div class="controls">
+        <button onclick="startTimer()">START</button>
+        <button onclick="pauseTimer()">PAUSE</button>
+        <button onclick="resetMatch()">RESET</button>
+      </div>
+    </div>
+
+    <div class="fighter red">
+      <h2>RED</h2>
+      <div class="score" id="redScore">0</div>
+      <div class="gamjeom">Gamjeom: <span id="redGamjeom">0</span></div>
+    </div>
+
+  </div>
+
+  <div class="bottom-controls">
+    <div>
+      <button onclick="addBlue(2)">Blue +2</button>
+      <button onclick="addBlue(3)">Blue +3</button>
+      <button onclick="addBlueGamjeom()">Blue Gamjeom</button>
+    </div>
+
+    <div>
+      <button onclick="addRed(2)">Red +2</button>
+      <button onclick="addRed(3)">Red +3</button>
+      <button onclick="addRedGamjeom()">Red Gamjeom</button>
+    </div>
+  </div>
+
+  <!-- 🔊 AUDIO (PINDAH KE ATAS SCRIPT) -->
+  <audio id="startSound" src="start.mp3" preload="auto"></audio>
+  <audio id="scoreSound" src="score.mp3" preload="auto"></audio>
+  <audio id="gamjeomSound" src="gamjeom.mp3" preload="auto"></audio>
+
+  <!-- 🧠 SCRIPT UTAMA -->
+  <script src="script.js"></script>
+
+  <!-- ⌨️ KEYBOARD CONTROL -->
+  <script>
+    document.addEventListener("keydown", function(e) {
+
+      switch(e.key.toLowerCase()) {
+
+        // 🔴 RED
+        case "d":
+          addRed(2);
+          return;
+
+        case "s":
+          addRed(3);
+          return;
+
+        case "a":
+          addRedGamjeom();
+          return;
+
+        // 🔵 BLUE
+        case "j":
+          addBlue(2);
+          return;
+
+        case "k":
+          addBlue(3);
+          return;
+
+        case "l":
+          addBlueGamjeom();
+          return;
+
+        // CONTROL
+        case "r":
+          resetMatch();
+          return;
+
+        case " ":
+          startTimer();
+          return;
+
+        case "p":
+          pauseTimer();
+          return;
+      }
+
+    });
+  </script>
+
+</body>
+</html>
