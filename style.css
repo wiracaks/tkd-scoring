@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: black;
+  color: white;
+  text-align: center;
+  user-select: none;
+  caret-color: transparent;
+}
+
+.header {
+  padding: 15px;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.main-board {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60vh;
+  padding: 0 40px;
+}
+
+.fighter {
+  width: 30%;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.blue {
+  background: linear-gradient(135deg, #0033cc, #0066ff);
+}
+
+.red {
+  background: linear-gradient(135deg, #990000, #ff0000);
+}
+
+.score {
+  font-size: 260px;
+  font-weight: bold;
+}
+
+.center {
+  width: 30%;
+}
+
+.timer {
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+
+.winner {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: yellow;
+}
+
+.controls button,
+.bottom-controls button {
+  padding: 12px 20px;
+  margin: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.controls button {
+  background-color: white;
+  color: black;
+}
+
+.bottom-controls {
+  margin-top: 20px;
+}
+
+.gamjeom {
+  font-size: 50px;
+  margin-top: 10px;
+  color:  yellow;
+}
+
+*:focus {
+  outline: none;
+}
